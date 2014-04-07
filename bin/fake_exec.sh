@@ -1,7 +1,8 @@
 #!/bin/ksh
 #Auteur : Erwan SEITE
-#Licence : CC-By
-#Source
+#Licence : GPLv3
+#Source : https://github.com/wanix/ScriptsEnVrac/blob/master/bin/fake_exec.sh
+
 #Ce script simule un EXE quelconque et eventuellement son comportement.
 #Soit myScriptName le nom donne a ce script (via un lien symbolique)
 #Si le fichier /TMP/myScriptName.content existe (et est lisible), alors la reponse de ce script sera le contenu de ce fichier par STDOUT.
