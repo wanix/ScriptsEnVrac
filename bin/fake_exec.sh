@@ -22,7 +22,7 @@ else
   echo ${myLongScriptName} $@
   if [ ! -t 0 ];
   then
-    #Mode non interactif, IE on a une entre stdin
+    #Mode non interactif, IE on a une entree stdin
     cat -
   fi
 fi
