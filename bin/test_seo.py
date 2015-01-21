@@ -76,6 +76,7 @@ for row in reader:
     if compare_url != resultstring:
       errorfound=True
       print "Error : incorrect url result "+compare_url
+      print "        sent "+url
       print "        espected "+resultstring
   except requests.ConnectionError:
       print "Error : failed to connect : "+url
