@@ -7,13 +7,19 @@
 ## Source : https://github.com/wanix/myTestLab
 ###############################################################################
 
-# CSVB example in input 
+# CSV example in input 
 # -----------------------------------------------------------------------------
 # URL to test; expected http code; expected URL in response
 # http://yahoo.com;301;https://www.yahoo.com/
 # http://amazon.com;301;http://www.amazon.com/
 # -----------------------------------------------------------------------------
 #
+
+# Cookie file example
+# -----------------------------------------------------------------------------
+# language=french
+# country=france
+# -----------------------------------------------------------------------------
 
 import requests
 import argparse
@@ -22,11 +28,11 @@ import csv
 ##########
 # Parsing args
 ##########
-parser = argparse.ArgumentParser(description="Effectue des tests a partir d'une liste d'URL")
-parser.add_argument("-t", "--testfile", required=True, type=argparse.FileType('r'), help="fichier d'URLS")
-parser.add_argument("-c", "--cookie", nargs='?', type=argparse.FileType('r'), help="fichier de cookie")
-parser.add_argument("-v", "--verbose", action="store_true", help="mode verbeux")
-parser.add_argument("-f", "--follow", action="store_true", help="suivre les redirections ?")
+parser = argparse.ArgumentParser(description="Verify redirects from list of URLs")
+parser.add_argument("-t", "--testfile", required=True, type=argparse.FileType('r'), help="input file of tests to do (see format inside the script)")
+parser.add_argument("-c", "--cookie", nargs='?', type=argparse.FileType('r'), help="cookie file (see format inside de script)")
+parser.add_argument("-v", "--verbose", action="store_true", help="be verbose")
+parser.add_argument("-f", "--follow", action="store_true", help="follow redirects to compare the last result ? (default no)")
 args = parser.parse_args()
 ##########
 
