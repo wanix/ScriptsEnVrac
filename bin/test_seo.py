@@ -75,9 +75,9 @@ for row in reader:
       compare_url=r.url
     if compare_url != resultstring:
       errorfound=True
-      print "Error : incorrect url result "+compare_url
-      print "        sent "+url
-      print "        espected "+resultstring
+      print "Error : sent     - "+url
+      print "        received - "+compare_url
+      print "        espected - "+resultstring
   except requests.ConnectionError:
       print "Error : failed to connect : "+url
       errorfound=True
@@ -85,7 +85,8 @@ for row in reader:
   if errorfound:
     NBerrors += 1
   elif args.verbose:
-    print "OK : "+url+" ("+str(r.status_code)+")"
+    print "OK : sent     - "+url
+    print "     received - "+compare_url+" ("+str(r.status_code)+")"
 #end for row in reader:
 
 NBTests=rownum - 1
