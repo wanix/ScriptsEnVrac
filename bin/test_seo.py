@@ -65,6 +65,8 @@ for row in reader:
   # URL to test; expected http code; expected URL in response
   (url, resultcode, resultstring) = row
   try:
+    url = url.strip()
+    resultstring = resultstring.strip()
     r = requests.get(url, allow_redirects=args.follow,cookies=cookies)
     if r.status_code != int(resultcode):
       errorfound=True
