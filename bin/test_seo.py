@@ -80,6 +80,7 @@ for row in reader:
   except requests.ConnectionError:
       print "Error : failed to connect : "+url
       errorfound=True
+      NBerrors += 1
   if errorfound:
     NBerrors += 1
   elif args.verbose:
