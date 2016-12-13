@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/bin/sh
 #Auteur : Erwan SEITE
 #Licence : GPLv3
 #Source : https://github.com/wanix/ScriptsEnVrac/blob/master/bin/fake_exec.sh
