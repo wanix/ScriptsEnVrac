@@ -18,5 +18,5 @@ if [ $myDockerImages -eq 0 ]; then
   echo "No image to delete"
 else
   echo "Deleting $myDockerImages image(s)"
-  docker rmi $(docker images -q)
+  docker rmi $(docker images -q) $@
 fi
