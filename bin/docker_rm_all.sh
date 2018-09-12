@@ -11,3 +11,11 @@ else
   echo "Deleting $myDockerContainers container(s)"
   docker rm -f $(docker ps -a -q)
 fi
+myVolumes=$(docker volume ls -q | wc -l)
+if [ $myVolumes -eq 0 ]; then
+  echo "No volume to delete"
+else
+  echo "Deleting $myVolumes volume(s)"
+  docker volume rm $(docker volume ls -q)
+fi
+
